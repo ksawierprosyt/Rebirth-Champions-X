@@ -1,31 +1,11 @@
--- variables --
-getgenv().autoClick = false;
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X", IntroEnabled = true,IntroText ="Ksawier's Hub", HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"}
 
-local RemoteEventPath = game:GetService("ReplicatedStorage").Events;
-
-local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
-
-local w = library:CreateWindow("Tapping Masters!")
-
-local a = w:CreateFolder("Main")
-
-local b = w:CreateFolder("Farm")
-
-a:DestroyGui()
-
----Toggles
-
-b:Toggle("Auto Click",function(bool)
-    getgenv().autoClick = bool
-    print('Auto Click is:', bool);
-    if bool then
-        doClick();
-    end
-end)
+--Values
+_G.autoClick = false;
 
 --Functions
-
-function doClick()
+function doTap()
     spawn(function ()
         while autoClick == true do
             local args = {[1] = 1}
@@ -34,3 +14,19 @@ function doClick()
            end
         end)
     end
+
+local FarmTab = Window:MakeTab({
+	Name = "AutoFarm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+FarmTab:AddButton({
+	Name = "Auto Click!",
+	Callback = function()
+       doTap()
+  	end    
+})
+
+
+OrionLib:Init()
