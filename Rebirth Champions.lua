@@ -8,7 +8,9 @@ _G.autoClick = false;
 function autoClick()
     while _G.autoClick == true do
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
+	wait(.0001)
     end
+end
 
 
 local FarmTab = Window:MakeTab({
