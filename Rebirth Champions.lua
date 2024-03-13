@@ -5,15 +5,11 @@ local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Ch
 _G.autoClick = false;
 
 --Functions
-function doTap()
-    spawn(function ()
-        while autoClick == true do
-            local args = {[1] = 1}
-            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
-            wait()
-           end
-        end)
+function autoClick()
+    while _G.autoClick == true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
     end
+
 
 local FarmTab = Window:MakeTab({
 	Name = "AutoFarm",
@@ -23,8 +19,9 @@ local FarmTab = Window:MakeTab({
 
 FarmTab:AddButton({
 	Name = "Auto Click!",
-	Callback = function()
-       doTap()
+	Callback = function(Value)
+       _G.autoClick == Value
+       autoClick()
   	end    
 })
 
