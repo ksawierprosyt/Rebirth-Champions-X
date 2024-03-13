@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X",  HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"})
+local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X",IntroEnabled = false, IntroText, = "Ksawier Hub"  HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"})
 
 --Values
 _G.autoClick = false;
