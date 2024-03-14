@@ -1,34 +1,33 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X",IntroEnabled = false, IntroText = "Ksawier Hub",  HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"})
+local Window = OrionLib:MakeWindow({Name = "[🍀X8!] Rebirth Champions X", HidePremium = true,IntroEnabled = false,IntroText = "Ksawier Hub", SaveConfig = true, ConfigFolder = "RebirthChampionsX"})
 
---Values
-_G.autoClick = true
+--Variables
+_G.autoTap = true
 
 --Functions
-function autoClick()
-    while _G.autoClick == true do
-        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
-	wait(.0001)
+function autoTap()
+	while _G.autoTap == true  do
+		game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
 	end
 end
 
-
+-- Tabs
 local FarmTab = Window:MakeTab({
-	Name = "AutoFarm",
+	Name = "Auto Farm",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
+--Toggles
 FarmTab:AddToggle({
-	Name = "Auto Click!",
+	Name = "Auto Tap!",
 	Default = false,
 	Callback = function(Value)
-       _G.autoClick == Value
-       autoClick()
-  	end    
+		_G.autoTap == Value
+		autoTap()
+		print(Value)
+	end    
 })
 
 
-
-end
 OrionLib:Init()
