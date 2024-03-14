@@ -2,18 +2,15 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "[🍀X8!] Rebirth Champions X", HidePremium = false, SaveConfig = true, ConfigFolder = "RebirthChampionsx"})
 
 --Variables
-getgenv().autoTap = false;
+getgenv().autoTap = true;
 
 --Functions
 function doTap()
-    spawn(function ()
-        while autoTap == true do
-            local args = {[1] = 1}
-            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
-            wait()
-           end
-        end)
-    end
+      while autoTap == true do
+         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
+         wait()
+         end
+   end
 
 local FarmTab = Window:MakeTab({
 	Name = "Auto Farm",
@@ -24,9 +21,8 @@ local FarmTab = Window:MakeTab({
 FarmTab:AddToggle({
 	Name = "Auto Tap",
 	Default = false,
-	Callback = function(bool)
-		if bool then
-			doTap();
-		end
+	Callback = function(Value)
+		_G.autoTap == Value
+		doTap()
 	end 
 })
