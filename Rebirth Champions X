@@ -1,1 +1,32 @@
-wef-jqe-gfgqgqeg
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "[🍀X8!] Rebirth Champions X", HidePremium = false, SaveConfig = true, ConfigFolder = "RebirthChampionsx"})
+
+--Variables
+getgenv().autoTap = false;
+
+--Functions
+function doTap()
+    spawn(function ()
+        while autoTap == true do
+            local args = {[1] = 1}
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
+            wait()
+           end
+        end)
+    end
+
+local FarmTab = Window:MakeTab({
+	Name = "Auto Farm",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+FarmTab:AddToggle({
+	Name = "Auto Tap",
+	Default = false,
+	Callback = function(bool)
+		if bool then
+			doTap();
+		end
+	end 
+})
