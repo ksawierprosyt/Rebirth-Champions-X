@@ -1,15 +1,15 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X",  HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"})
+local Window = OrionLib:MakeWindow({Name = "Ksawier Hub │ [🍀X8!] Rebirth Champions X",IntroEnabled = false, IntroText = "Ksawier Hub",  HidePremium = true, SaveConfig = true, ConfigFolder = "RebirthChampFolder"})
 
 --Values
-_G.autoClick = false;
+_G.autoClick = true
 
 --Functions
 function autoClick()
     while _G.autoClick == true do
         game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click3"):FireServer()
 	wait(.0001)
-    end
+	end
 end
 
 
@@ -27,6 +27,8 @@ FarmTab:AddToggle({
        autoClick()
   	end    
 })
+
+
 
 end
 OrionLib:Init()
