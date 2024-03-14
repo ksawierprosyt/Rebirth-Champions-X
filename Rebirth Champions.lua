@@ -1,3 +1,4 @@
+if game.Placeid == 8540346411 then
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "[🍀X8!] Rebirth Champions X", HidePremium = true,IntroEnabled = false,IntroText = "Ksawier Hub", SaveConfig = true, ConfigFolder = "RebirthChampionsX"})
 
@@ -29,5 +30,5 @@ FarmTab:AddToggle({
 	end    
 })
 
-
+end
 OrionLib:Init()
